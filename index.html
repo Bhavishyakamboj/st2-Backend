@@ -4,6 +4,7 @@
 	<style>
 		body {background-color: powderblue;}
 		#but{padding: 7px 20px;font-size: 16px;text-align: center;}
+		#seabt{padding: 3px 10px;font-size: 10px;text-align: center;}
 	</style>
     <meta charset="utf-8">
     <title></title>
@@ -30,6 +31,11 @@
         <tr>
           <td></td>
           <td><input type="submit" name="" value="Submit" id="but" onclick="func()"></td>
+        </tr>
+	<tr>
+          <td></td>
+          <td><input type="text" placeholder="Search.." name="search" id="sea" onclick="search()"></td>
+	  <td><button type="submit" ><i id="seabt">Search</i></button></td>
         </tr>
       </table>
     </form>
@@ -75,6 +81,16 @@
         var x=document.getElementsByTagName("tr");
         
       }
+	function search(){
+			var s=document.getElementById("sea").value;
+			var p=document.getElementById("name").value;
+			if(name.equals(p))	{
+			document.getElementById("additems").innerHTML="<tr><td id=\"column-down\">" + p + "</td>";
+			}
+			else	{
+			alert("no item found");
+			}
+	}
       function func1(id){
         var del=document.getElementById(id);
         table.removeChild(del);
